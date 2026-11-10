@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diego Romero | Portafolio</title>
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="contenedor fila">
+      <a href="#inicio" class="logo">Diego Romero</a>
+      <button class="boton-menu" type="button">Menu</button>
+      <nav class="menu">
+        <a href="#sobre-mi">Sobre mi</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="inicio" class="portada">
+    <div class="contenedor">
+      <h1>Hola, soy Diego Romero</h1>
+      <p>Estudiante de Ingenieria en Ciencias de la Computacion en UNICAH</p>
+      <a href="#proyectos" class="boton">Ver mis proyectos</a>
+    </div>
+  </section>
+
+  <section id="sobre-mi" class="seccion">
+    <div class="contenedor">
+      <h2>Sobre mi</h2>
+      <p>Me gusta el desarrollo web y aprender nuevas herramientas. En la clase de Portales Web II he trabajado con Bootstrap, Sass, Less, NPM y ahora con Vite.</p>
+    </div>
+  </section>
+
+  <section id="proyectos" class="seccion gris">
+    <div class="contenedor">
+      <h2>Proyectos</h2>
+      <div class="tarjetas">
+        <div class="tarjeta">
+          <img src="./assets/tienda.svg" alt="Tienda de cafe">
+          <div class="tarjeta-cuerpo">
+            <h3>Cafe El Buen Grano</h3>
+            <p>Sitio de una tienda de cafe hecho con Bootstrap 4, Sass y scripts de NPM.</p>
+          </div>
+          <div class="tarjeta-pie">
+            <a href="https://bitbucket.org/dromero-unicah/tienda-cafe" target="_blank" class="boton">Ver repositorio</a>
+          </div>
+        </div>
+        <div class="tarjeta">
+          <img src="./assets/cards.png" alt="Cards con Less">
+          <div class="tarjeta-cuerpo">
+            <h3>Cards con Less</h3>
+            <p>Tarjetas con variables, mixins y anidamiento usando el preprocesador Less.</p>
+          </div>
+          <div class="tarjeta-pie">
+            <a href="#contacto" class="boton">Mas informacion</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="habilidades" class="seccion">
+    <div class="contenedor">
+      <h2>Habilidades</h2>
+      <ul class="habilidades">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Bootstrap</li>
+        <li>Sass</li>
+        <li>Less</li>
+        <li>Git</li>
+        <li>Vite</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contacto" class="seccion gris">
+    <div class="contenedor">
+      <h2>Contacto</h2>
+      <form class="formulario">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre">
+        <label for="correo">Correo</label>
+        <input type="email" id="correo">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" rows="4"></textarea>
+        <button type="submit" class="boton">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="pie">
+    <p>&copy; <span id="anio"></span> Diego Romero</p>
+  </footer>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

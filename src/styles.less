@@ -1,0 +1,253 @@
+@principal: #2c7be5;
+@oscuro: #1f2937;
+@gris: #f3f4f6;
+@blanco: #ffffff;
+@texto: #374151;
+@radio: 10px;
+@espacio: 16px;
+
+.sombra(@nivel: 0.12) {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, @nivel);
+}
+
+.flex(@justificar: flex-start, @alinear: stretch) {
+  display: flex;
+  justify-content: @justificar;
+  align-items: @alinear;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: @texto;
+  background-color: @blanco;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  color: @oscuro;
+}
+
+.contenedor {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 @espacio;
+}
+
+.fila {
+  .flex(space-between, center);
+  flex-wrap: wrap;
+}
+
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: (@radio / 2);
+  background-color: @principal;
+  color: @blanco;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken(@principal, 12%);
+  }
+}
+
+.boton-secundario {
+  background-color: @oscuro;
+  color: @blanco;
+}
+
+.oculto {
+  display: none;
+}
+
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: @espacio 0;
+  background-color: @oscuro;
+
+  .logo {
+    color: @blanco;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+}
+
+.boton-menu {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid @blanco;
+  border-radius: (@radio / 2);
+  background: none;
+  color: @blanco;
+  cursor: pointer;
+}
+
+.menu {
+  .flex();
+  gap: @espacio * 1.5;
+
+  a {
+    color: #d1d5db;
+    text-decoration: none;
+
+    &:hover {
+      color: @blanco;
+    }
+  }
+}
+
+.portada {
+  padding: (@espacio * 6) 0;
+  background: linear-gradient(135deg, @oscuro, @principal);
+  text-align: center;
+
+  h1 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: @blanco;
+  }
+
+  p {
+    margin-bottom: @espacio * 2;
+    font-size: 1.2rem;
+    color: #e5e7eb;
+  }
+}
+
+.seccion {
+  padding: (@espacio * 4) 0;
+
+  &.gris {
+    background-color: @gris;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.tarjetas {
+  .flex(center);
+  flex-wrap: wrap;
+  gap: @espacio * 1.5;
+}
+
+.tarjeta {
+  .flex();
+  flex-direction: column;
+  width: 300px;
+  border-radius: @radio;
+  overflow: hidden;
+  background-color: @blanco;
+  .sombra();
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+    .sombra(0.25);
+  }
+
+  img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+  }
+
+  &-cuerpo {
+    flex: 1;
+    padding: @espacio;
+
+    h3 {
+      margin: 0 0 (@espacio / 2);
+    }
+  }
+
+  &-pie {
+    .flex(flex-end);
+    padding: 0 @espacio @espacio;
+  }
+}
+
+.habilidades {
+  .flex();
+  flex-wrap: wrap;
+  gap: (@espacio / 1.5);
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 6px 14px;
+    border-radius: 20px;
+    background-color: fade(@principal, 15%);
+    color: darken(@principal, 20%);
+    font-weight: bold;
+  }
+}
+
+.formulario {
+  .flex();
+  flex-direction: column;
+  max-width: 500px;
+
+  input,
+  textarea {
+    margin-bottom: @espacio;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: (@radio / 2);
+    font: inherit;
+  }
+
+  .boton {
+    align-self: flex-start;
+  }
+}
+
+.pie {
+  padding: @espacio 0;
+  background-color: @oscuro;
+  color: #9ca3af;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .boton-menu {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: @espacio;
+    gap: (@espacio / 2);
+
+    &.abierto {
+      display: flex;
+    }
+  }
+
+  .portada h1 {
+    font-size: 1.8rem;
+  }
+}
